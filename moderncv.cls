@@ -258,7 +258,7 @@
 
 % adds a social link to one's personal information (optional)
 % usage: \social[<optional type>][<optional url>]{<account name>}
-% where <optional type> should be one of: "linkedin", "xing", "twitter", "github", "skype", "stackoverflow"
+% where <optional type> should be one of: "linkedin", "xing", "twitter", "github", "gitlab", "skype", "stackoverflow"
 \collectionnew{socials}
 \NewDocumentCommand{\social}{O{}O{}m}{%
   \ifthenelse{\equal{#2}{}}%
@@ -267,6 +267,7 @@
       \ifthenelse{\equal{#1}{xing}}         {\collectionadd[xing]{socials}         {\protect\httplink[#3]{www.xing.com/profile/#3}}}       {}%
       \ifthenelse{\equal{#1}{twitter}}      {\collectionadd[twitter]{socials}      {\protect\httplink[#3]{www.twitter.com/#3}}}            {}%
       \ifthenelse{\equal{#1}{github}}       {\collectionadd[github]{socials}       {\protect\httplink[#3]{www.github.com/#3}}}             {}%
+      \ifthenelse{\equal{#1}{gitlab}}       {\collectionadd[gitlab]{socials}       {\protect\httplink[#3]{gitlab.com/#3}}}                 {}%
       \ifthenelse{\equal{#1}{skype}}        {\collectionadd[skype]{socials}        {#3}}                                                   {}%
       \ifthenelse{\equal{#1}{stackoverflow}}{\collectionadd[stackoverflow]{socials}{\protect\httplink[#3]{www.stackoverflow.com/users/#3}}}{}%
     }
@@ -309,6 +310,7 @@
 \newcommand*{\xingsocialsymbol}         {}
 \newcommand*{\twittersocialsymbol}      {}
 \newcommand*{\githubsocialsymbol}       {}
+\newcommand*{\gitlabsocialsymbol}       {}
 \newcommand*{\skypesocialsymbol}        {}
 \newcommand*{\stackoverflowsocialsymbol}{}
 
